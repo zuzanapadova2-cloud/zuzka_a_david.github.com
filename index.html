@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Zuzka & Dávid | 28.08.2027</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #4b4038;
+    background: #f9f6f1;
+    line-height: 1.7;
+}
+
+h1, h2, h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* MENU */
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(249,246,241,0.95);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    border-bottom: 1px solid #e3d9cf;
+}
+
+.nav-inner {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 16px 20px;
+}
+
+.nav-inner a {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.nav-inner a:hover {
+    color: #a5855e;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 20px 60px;
+    background:
+        linear-gradient(rgba(249,246,241,0.75), rgba(249,246,241,0.9)),
+        url('') center/cover;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.small-title {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(65px, 12vw, 125px);
+    color: #6b5749;
+    line-height: 0.9;
+}
+
+.hero .date {
+    margin-top: 30px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+}
+
+.hero .quote {
+    margin-top: 25px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 25px;
+    font-style: italic;
+}
+
+.divider {
+    width: 70px;
+    height: 1px;
+    background: #b69a78;
+    margin: 30px auto;
+}
+
+/* COUNTDOWN */
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.countdown div {
+    min-width: 75px;
+}
+
+.countdown strong {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 500;
+    color: #80654f;
+}
+
+.countdown span {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* SECTIONS */
+
+section {
+    max-width: 1050px;
+    margin: auto;
+    padding: 100px 25px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-title h2 {
+    font-size: 52px;
+    color: #6b5749;
+}
+
+.section-title p {
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* LOCATION */
+
+.locations {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.location-card {
+    background: #fffdf9;
+    padding: 45px 30px;
+    text-align: center;
+    border: 1px solid #e5dbd0;
+}
+
+.location-card .icon {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.location-card h3 {
+    font-size: 32px;
+    color: #80654f;
+    margin-bottom: 15px;
+}
+
+.location-card strong {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.map-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 22px;
+    border: 1px solid #b69a78;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* PROGRAM */
+
+.program {
+    max-width: 700px;
+    margin: auto;
+}
+
+.program-item {
+    display: flex;
+    gap: 35px;
+    padding: 22px 0;
+    border-bottom: 1px solid #e4dcd3;
+}
+
+.program-time {
+    width: 80px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 25px;
+    color: #a5855e;
+}
+
+.program-text {
+    flex: 1;
+}
+
+/* GIFTS */
+
+.gift-text {
+    max-width: 750px;
+    margin: auto;
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+}
+
+.gift-note {
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+/* RSVP */
+
+.rsvp-box {
+    max-width: 650px;
+    margin: auto;
+    background: #fffdf9;
+    padding: 45px;
+    border: 1px solid #e5dbd0;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d8ccc0;
+    background: #fff;
+    font-family: inherit;
+}
+
+textarea {
+    min-height: 120px;
+}
+
+.submit {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background: #80654f;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+/* STORY */
+
+.story {
+    max-width: 750px;
+    margin: auto;
+    text-align: center;
+}
+
+.story p {
+    margin-bottom: 20px;
+}
+
+/* CONTACT */
+
+.contact {
+    text-align: center;
+}
+
+.contact h3 {
+    font-size: 30px;
+    color: #80654f;
+}
+
+.contact p {
+    margin: 10px 0;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 45px 20px;
+    background: #eee7df;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+}
+
+/* MOBILE */
+
+@media(max-width: 700px) {
+
+    .nav-inner {
+        gap: 12px;
+    }
+
+    .nav-inner a {
+        font-size: 9px;
+    }
+
+    .locations {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 75px 20px;
+    }
+
+    .section-title h2 {
+        font-size: 42px;
+    }
+
+    .hero h1 {
+        font-size: 70px;
+    }
+
+    .rsvp-box {
+        padding: 25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="nav-inner">
+<a href="#domov">Domov</a>
+<a href="#kedy">Kedy a kde</a>
+<a href="#program">Program</a>
+<a href="#dary">Dary</a>
+<a href="#rsvp">Účasť</a>
+<a href="#pribeh">Náš príbeh</a>
+<a href="#kontakt">Kontakt</a>
+</div>
+</nav>
+
+
+<!-- DOMOV -->
+
+<header class="hero" id="domov">
+
+<div class="hero-content">
+
+<div class="small-title">S radosťou vás pozývame na náš svadobný deň</div>
+
+<h1>Zuzka & Dávid</h1>
+
+<div class="divider"></div>
+
+<div class="date">
+28. august 2027
+</div>
+
+<div class="quote">
+„Až do konca dní“
+</div>
+
+<div class="countdown">
+
+<div>
+<strong id="days">0</strong>
+<span>dní</span>
+</div>
+
+<div>
+<strong id="hours">0</strong>
+<span>hodín</span>
+</div>
+
+<div>
+<strong id="minutes">0</strong>
+<span>minút</span>
+</div>
+
+<div>
+<strong id="seconds">0</strong>
+<span>sekúnd</span>
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- KEDY A KDE -->
+
+<section id="kedy">
+
+<div class="section-title">
+<p>Náš veľký deň</p>
+<h2>Kedy a kde</h2>
+</div>
+
+<div class="locations">
+
+<div class="location-card">
+
+<div class="icon">🤍</div>
+
+<h3>Obrad</h3>
+
+<strong>14:00</strong>
+
+<p>
+Kostol sv. Vavrinca<br>
+Sobrance
+</p>
+
+<a class="map-button"
+href="https://www.google.com/maps/search/?api=1&query=Kostol+sv.+Vavrinca+Sobrance"
+target="_blank">
+Otvoriť mapu
+</a>
+
+</div>
+
+
+<div class="location-card">
+
+<div class="icon">🥂</div>
+
+<h3>Hostina</h3>
+
+<p>
+Hotel Chemes<br>
+Zemplínska šírava
+</p>
+
+<a class="map-button"
+href="https://www.google.com/maps/search/?api=1&query=Hotel+Chemes+Zemplínska+šírava"
+target="_blank">
+Otvoriť mapu
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PROGRAM -->
+
+<section id="program">
+
+<div class="section-title">
+
+<p>Čo nás čaká</p>
+
+<h2>Náš svadobný deň</h2>
+
+</div>
+
+<div class="program">
+
+<div class="program-item">
+
+<div class="program-time">14:00</div>
+
+<div class="program-text">
+<strong>💍 Svadobný obrad</strong><br>
+Kostol sv. Vavrinca, Sobrance
+</div>
+
+</div>
+
+
+<div class="program-item">
+
+<div class="program-time">—</div>
+
+<div class="program-text">
+🤍 Gratulácie a spoločné fotografie
+</div>
+
+</div>
+
+
+<div class="program-item">
+
+<div class="program-time">—</div>
+
+<div class="program-text">
+🥂 Presun na svadobnú hostinu
+</div>
+
+</div>
+
+
+<div class="program-item">
+
+<div class="program-time">—</div>
+
+<div class="program-text">
+🍽️ Spoločná hostina
+</div>
+
+</div>
+
+
+<div class="program-item">
+
+<div class="program-time">—</div>
+
+<div class="program-text">
+💃 Tanec, zábava a všetko, čo k svadbe patrí
+</div>
+
+</div>
+
+</div>
+
+<p style="text-align:center;margin-top:35px;font-size:13px;">
+Presný harmonogram ešte doplníme. 😊
+</p>
+
+</section>
+
+
+<!-- DARY -->
+
+<section id="dary">
+
+<div class="section-title">
+
+<p>Ak by ste nás chceli potešiť</p>
+
+<h2>Wishlist</h2>
+
+</div>
+
+<div class="gift-text">
+
+Najväčším darom pre nás bude, že tento deň prežijete spolu s nami. 🤍
+
+<div class="gift-note">
+
+Ak by ste nám predsa len chceli venovať aj niečo navyše,
+pripravili sme pre vás niekoľko tipov na darčeky.
+
+<br><br>
+
+<strong>Wishlist budeme postupne dopĺňať.</strong>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- RSVP -->
+
+<section id="rsvp">
+
+<div class="section-title">
+
+<p>Tešíme sa na vás</p>
+
+<h2>Potvrdenie účasti</h2>
+
+</div>
+
+<div class="rsvp-box">
+
+<form>
+
+<div class="form-group">
+
+<label>Meno a priezvisko</label>
+
+<input type="text" placeholder="Vaše meno">
+
+</div>
+
+
+<div class="form-group">
+
+<label>Prídete na našu svadbu?</label>
+
+<select>
+
+<option>Áno, veľmi radi prídeme 🤍</option>
+
+<option>Žiaľ, nemôžeme prísť</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Počet hostí</label>
+
+<select>
+
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5</option>
+<option>6</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Stravovacie obmedzenia</label>
+
+<textarea placeholder="Alergie, intolerancie alebo špeciálna strava..."></textarea>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Odkaz pre nás ❤️</label>
+
+<textarea placeholder="Napíšte nám pár slov..."></textarea>
+
+</div>
+
+
+<button class="submit" type="button"
+onclick="alert('Ďakujeme! RSVP formulár ešte prepojíme s odosielaním odpovedí.')">
+
+Odoslať odpoveď
+
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+
+<!-- PRIBEH -->
+
+<section id="pribeh">
+
+<div class="section-title">
+
+<p>Niečo o nás</p>
+
+<h2>Náš príbeh</h2>
+
+</div>
+
+<div class="story">
+
+<p>
+Každý príbeh má svoj začiatok. Ten náš pokračuje
+až do chvíle, keď si 28. augusta 2027 povieme svoje
+„áno“.
+</p>
+
+<p>
+A potom už budeme písať ďalšie kapitoly spolu.
+🤍
+</p>
+
+<p>
+<strong>Na tú najkrajšiu kapitolu sa tešíme práve s vami.</strong>
+</p>
+
+</div>
+
+</section>
+
+
+<!-- KONTAKT -->
+
+<section id="kontakt">
+
+<div class="section-title">
+
+<p>Ak by ste čokoľvek potrebovali</p>
+
+<h2>Kontakt</h2>
+
+</div>
+
+<div class="contact">
+
+<h3>Zuzka & Dávid</h3>
+
+<p>
+V prípade otázok nám pokojne napíšte.
+</p>
+
+<p style="margin-top:25px;">
+28. 08. 2027
+</p>
+
+</div>
+
+</section>
+
+
+<footer>
+
+Zuzka & Dávid
+
+<br>
+
+<span style="font-size:15px;">
+Až do konca dní 🤍
+</span>
+
+</footer>
+
+
+<script>
+
+/* ODPOČÍTAVANIE */
+
+const weddingDate =
+new Date("August 28, 2027 14:00:00").getTime();
+
+function updateCountdown() {
+
+const now = new Date().getTime();
+
+const distance = weddingDate - now;
+
+if (distance < 0) {
+document.getElementById("days").innerText = "0";
+document.getElementById("hours").innerText = "0";
+document.getElementById("minutes").innerText = "0";
+document.getElementById("seconds").innerText = "0";
+return;
+}
+
+const days =
+Math.floor(distance / (1000 * 60 * 60 * 24));
+
+const hours =
+Math.floor((distance / (1000 * 60 * 60)) % 24);
+
+const minutes =
+Math.floor((distance / (1000 * 60)) % 60);
+
+const seconds =
+Math.floor((distance / 1000) % 60);
+
+document.getElementById("days").innerText = days;
+document.getElementById("hours").innerText = hours;
+document.getElementById("minutes").innerText = minutes;
+document.getElementById("seconds").innerText = seconds;
+
+}
+
+updateCountdown();
+
+setInterval(updateCountdown,1000);
+
+</script>
+
+</body>
+</html>
