@@ -651,7 +651,11 @@ pripravili sme pre vás niekoľko tipov na darčeky.
 
 <div class="rsvp-box">
 
-<form id="rsvpForm">
+<form
+    id="rsvpForm"
+    action="https://formspree.io/f/xqpeeerl"
+    method="POST"
+>
 
 <div class="form-group">
 
@@ -660,13 +664,15 @@ Meno a priezvisko
 </label>
 
 <input
-type="text"
-id="meno"
-name="meno"
-placeholder="Vaše meno a priezvisko"
-required>
+    type="text"
+    id="meno"
+    name="Meno a priezvisko"
+    placeholder="Vaše meno a priezvisko"
+    required
+>
 
 </div>
+
 
 <div class="form-group">
 
@@ -675,21 +681,23 @@ Prídete na našu svadbu?
 </label>
 
 <select
-id="ucast"
-name="ucast"
-required>
+    id="ucast"
+    name="Účasť"
+    required
+>
 
-<option value="ano">
+<option value="Áno, veľmi radi prídeme">
 Áno, veľmi radi prídeme 🤍
 </option>
 
-<option value="nie">
+<option value="Žiaľ, nemôžeme prísť">
 Žiaľ, nemôžeme prísť
 </option>
 
 </select>
 
 </div>
+
 
 <div class="form-group">
 
@@ -698,8 +706,9 @@ Počet hostí
 </label>
 
 <select
-id="hostia"
-name="hostia">
+    id="hostia"
+    name="Počet hostí"
+>
 
 <option value="1">1</option>
 <option value="2">2</option>
@@ -711,6 +720,7 @@ name="hostia">
 </select>
 
 </div>
+
 
 <!-- UBYTOVANIE -->
 
@@ -723,20 +733,22 @@ Máte záujem o ubytovanie?
 </label>
 
 <select
-id="ubytovanie-zaujem"
-name="ubytovanie">
+    id="ubytovanie-zaujem"
+    name="Ubytovanie"
+>
 
-<option value="nie">
+<option value="Nie, ubytovanie nepotrebujeme">
 Nie, ubytovanie nepotrebujeme
 </option>
 
-<option value="ano">
+<option value="Áno, máme záujem o ubytovanie">
 Áno, máme záujem o ubytovanie
 </option>
 
 </select>
 
 </div>
+
 
 <div id="ubytovanie-detaily">
 
@@ -747,8 +759,9 @@ Počet osôb na ubytovanie
 </label>
 
 <select
-id="pocet-osob"
-name="pocet_osob">
+    id="pocet-osob"
+    name="Počet osôb na ubytovanie"
+>
 
 <option value="1">1</option>
 <option value="2">2</option>
@@ -761,6 +774,7 @@ name="pocet_osob">
 
 </div>
 
+
 <div class="form-group">
 
 <label for="pocet-izieb">
@@ -768,8 +782,9 @@ Počet izieb
 </label>
 
 <select
-id="pocet-izieb"
-name="pocet_izieb">
+    id="pocet-izieb"
+    name="Počet izieb"
+>
 
 <option value="1">1</option>
 <option value="2">2</option>
@@ -784,6 +799,7 @@ name="pocet_izieb">
 
 </div>
 
+
 <div class="form-group">
 
 <label for="strava">
@@ -791,11 +807,13 @@ Stravovacie obmedzenia
 </label>
 
 <textarea
-id="strava"
-name="strava"
-placeholder="Alergie, intolerancie alebo špeciálna strava..."></textarea>
+    id="strava"
+    name="Stravovacie obmedzenia"
+    placeholder="Alergie, intolerancie alebo špeciálna strava..."
+></textarea>
 
 </div>
+
 
 <div class="form-group">
 
@@ -804,20 +822,18 @@ Odkaz pre nás ❤️
 </label>
 
 <textarea
-id="odkaz"
-name="odkaz"
-placeholder="Napíšte nám pár slov..."></textarea>
+    id="odkaz"
+    name="Odkaz pre novomanželov"
+    placeholder="Napíšte nám pár slov..."
+></textarea>
 
 </div>
 
-<p class="important-note">
-Odoslanie formulára doplníme v ďalšom kroku.
-</p>
 
 <button
-class="submit"
-type="button"
-onclick="alert('Formulár je pripravený. Odosielanie odpovedí nastavíme v ďalšom kroku. 🤍')">
+    class="submit"
+    type="submit"
+>
 
 Odoslať odpoveď
 
