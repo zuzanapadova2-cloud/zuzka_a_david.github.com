@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="sk">
 <head>
 <meta charset="UTF-8">
@@ -7,6 +8,7 @@
 <title>Zuzka & Dávid | 28.08.2027</title>
 
 <style>
+
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap');
 
 * {
@@ -62,6 +64,7 @@ nav {
     font-size: 12px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
+    transition: color 0.3s ease;
 }
 
 .nav-inner a:hover {
@@ -77,8 +80,12 @@ nav {
     justify-content: center;
     text-align: center;
     padding: 120px 20px 60px;
+
     background:
-        linear-gradient(rgba(249,246,241,0.75), rgba(249,246,241,0.9)),
+        linear-gradient(
+            rgba(249,246,241,0.75),
+            rgba(249,246,241,0.9)
+        ),
         url('') center/cover;
 }
 
@@ -210,6 +217,12 @@ section {
     font-size: 11px;
     letter-spacing: 1px;
     text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.map-button:hover {
+    background: #80654f;
+    color: white;
 }
 
 /* PROGRAM */
@@ -274,16 +287,20 @@ section {
     letter-spacing: 1px;
 }
 
-input, textarea, select {
+input,
+textarea,
+select {
     width: 100%;
     padding: 13px;
     border: 1px solid #d8ccc0;
     background: #fff;
     font-family: inherit;
+    color: #4b4038;
 }
 
 textarea {
     min-height: 120px;
+    resize: vertical;
 }
 
 .submit {
@@ -295,18 +312,25 @@ textarea {
     text-transform: uppercase;
     letter-spacing: 2px;
     cursor: pointer;
+    font-family: inherit;
+    transition: background 0.3s ease;
 }
 
-/* STORY */
+.submit:hover {
+    background: #6b5749;
+}
 
-.story {
-    max-width: 750px;
-    margin: auto;
+/* UBYTOVANIE */
+
+#ubytovanie {
+    display: none;
+}
+
+.important-note {
+    font-size: 13px;
     text-align: center;
-}
-
-.story p {
-    margin-bottom: 20px;
+    margin-top: 20px;
+    color: #80654f;
 }
 
 /* CONTACT */
@@ -322,6 +346,14 @@ textarea {
 
 .contact p {
     margin: 10px 0;
+}
+
+.contact a {
+    transition: color 0.3s ease;
+}
+
+.contact a:hover {
+    color: #a5855e;
 }
 
 /* FOOTER */
@@ -365,23 +397,37 @@ footer {
     .rsvp-box {
         padding: 25px;
     }
+
+    .program-item {
+        gap: 15px;
+    }
+
+    .program-time {
+        width: 65px;
+        font-size: 21px;
+    }
+
+    .countdown {
+        gap: 15px;
+    }
+
 }
+
 </style>
+
 </head>
 
 <body>
 
+<!-- MENU -->
+
 <nav>
 <div class="nav-inner">
-<a href="#domov">Domov</a>
-<a href="#kedy">Kedy a kde</a>
-<a href="#program">Program</a>
-<a href="#dary">Dary</a>
-<a href="#rsvp">Účasť</a>
-<a href="#kontakt">Kontakt</a>
+
+<a href="#domov">Domov</a> <a href="#kedy">Kedy a kde</a> <a href="#program">Program</a> <a href="#dary">Dary</a> <a href="#rsvp">Účasť</a> <a href="#kontakt">Kontakt</a>
+
 </div>
 </nav>
-
 
 <!-- DOMOV -->
 
@@ -389,7 +435,9 @@ footer {
 
 <div class="hero-content">
 
-<div class="small-title">S radosťou vás pozývame na náš svadobný deň</div>
+<div class="small-title">
+S radosťou vás pozývame na náš svadobný deň
+</div>
 
 <h1>Zuzka & Dávid</h1>
 
@@ -431,14 +479,15 @@ footer {
 
 </header>
 
-
 <!-- KEDY A KDE -->
 
 <section id="kedy">
 
 <div class="section-title">
+
 <p>Náš veľký deň</p>
 <h2>Kedy a kde</h2>
+
 </div>
 
 <div class="locations">
@@ -456,14 +505,13 @@ Kostol sv. Vavrinca<br>
 Sobrance
 </p>
 
-<a class="map-button"
+<a
+class="map-button"
 href="https://www.google.com/maps/search/?api=1&query=Kostol+sv.+Vavrinca+Sobrance"
 target="_blank">
-Otvoriť mapu
-</a>
+Otvoriť mapu </a>
 
 </div>
-
 
 <div class="location-card">
 
@@ -476,18 +524,17 @@ Hotel Chemes<br>
 Zemplínska šírava
 </p>
 
-<a class="map-button"
+<a
+class="map-button"
 href="https://www.google.com/maps/search/?api=1&query=Hotel+Chemes+Zemplínska+šírava"
 target="_blank">
-Otvoriť mapu
-</a>
+Otvoriť mapu </a>
 
 </div>
 
 </div>
 
 </section>
-
 
 <!-- PROGRAM -->
 
@@ -496,7 +543,6 @@ Otvoriť mapu
 <div class="section-title">
 
 <p>Čo nás čaká</p>
-
 <h2>Náš svadobný deň</h2>
 
 </div>
@@ -514,7 +560,6 @@ Kostol sv. Vavrinca, Sobrance
 
 </div>
 
-
 <div class="program-item">
 
 <div class="program-time">—</div>
@@ -524,7 +569,6 @@ Kostol sv. Vavrinca, Sobrance
 </div>
 
 </div>
-
 
 <div class="program-item">
 
@@ -536,7 +580,6 @@ Kostol sv. Vavrinca, Sobrance
 
 </div>
 
-
 <div class="program-item">
 
 <div class="program-time">—</div>
@@ -546,7 +589,6 @@ Kostol sv. Vavrinca, Sobrance
 </div>
 
 </div>
-
 
 <div class="program-item">
 
@@ -566,7 +608,6 @@ Presný harmonogram ešte doplníme. 😊
 
 </section>
 
-
 <!-- DARY -->
 
 <section id="dary">
@@ -574,7 +615,6 @@ Presný harmonogram ešte doplníme. 😊
 <div class="section-title">
 
 <p>Ak by ste nás chceli potešiť</p>
-
 <h2>Wishlist</h2>
 
 </div>
@@ -598,7 +638,6 @@ pripravili sme pre vás niekoľko tipov na darčeky.
 
 </section>
 
-
 <!-- RSVP -->
 
 <section id="rsvp">
@@ -606,77 +645,179 @@ pripravili sme pre vás niekoľko tipov na darčeky.
 <div class="section-title">
 
 <p>Tešíme sa na vás</p>
-
 <h2>Potvrdenie účasti</h2>
 
 </div>
 
 <div class="rsvp-box">
 
-<form>
+<form id="rsvpForm">
 
 <div class="form-group">
 
-<label>Meno a priezvisko</label>
+<label for="meno">
+Meno a priezvisko
+</label>
 
-<input type="text" placeholder="Vaše meno">
+<input
+type="text"
+id="meno"
+name="meno"
+placeholder="Vaše meno a priezvisko"
+required>
 
 </div>
 
-
 <div class="form-group">
 
-<label>Prídete na našu svadbu?</label>
+<label for="ucast">
+Prídete na našu svadbu?
+</label>
 
-<select>
+<select
+id="ucast"
+name="ucast"
+required>
 
-<option>Áno, veľmi radi prídeme 🤍</option>
+<option value="ano">
+Áno, veľmi radi prídeme 🤍
+</option>
 
-<option>Žiaľ, nemôžeme prísť</option>
+<option value="nie">
+Žiaľ, nemôžeme prísť
+</option>
 
 </select>
 
 </div>
 
-
 <div class="form-group">
 
-<label>Počet hostí</label>
+<label for="hostia">
+Počet hostí
+</label>
 
-<select>
+<select
+id="hostia"
+name="hostia">
 
-<option>1</option>
-<option>2</option>
-<option>3</option>
-<option>4</option>
-<option>5</option>
-<option>6</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
 
 </select>
 
 </div>
 
+<!-- UBYTOVANIE -->
+
+<div id="ubytovanie">
 
 <div class="form-group">
 
-<label>Stravovacie obmedzenia</label>
+<label for="ubytovanie-zaujem">
+Máte záujem o ubytovanie?
+</label>
 
-<textarea placeholder="Alergie, intolerancie alebo špeciálna strava..."></textarea>
+<select
+id="ubytovanie-zaujem"
+name="ubytovanie">
+
+<option value="nie">
+Nie, ubytovanie nepotrebujeme
+</option>
+
+<option value="ano">
+Áno, máme záujem o ubytovanie
+</option>
+
+</select>
 
 </div>
 
+<div id="ubytovanie-detaily">
 
 <div class="form-group">
 
-<label>Odkaz pre nás ❤️</label>
+<label for="pocet-osob">
+Počet osôb na ubytovanie
+</label>
 
-<textarea placeholder="Napíšte nám pár slov..."></textarea>
+<select
+id="pocet-osob"
+name="pocet_osob">
+
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+
+</select>
 
 </div>
 
+<div class="form-group">
 
-<button class="submit" type="button"
-onclick="alert('Ďakujeme! RSVP formulár ešte prepojíme s odosielaním odpovedí.')">
+<label for="pocet-izieb">
+Počet izieb
+</label>
+
+<select
+id="pocet-izieb"
+name="pocet_izieb">
+
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+
+</select>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="form-group">
+
+<label for="strava">
+Stravovacie obmedzenia
+</label>
+
+<textarea
+id="strava"
+name="strava"
+placeholder="Alergie, intolerancie alebo špeciálna strava..."></textarea>
+
+</div>
+
+<div class="form-group">
+
+<label for="odkaz">
+Odkaz pre nás ❤️
+</label>
+
+<textarea
+id="odkaz"
+name="odkaz"
+placeholder="Napíšte nám pár slov..."></textarea>
+
+</div>
+
+<p class="important-note">
+Odoslanie formulára doplníme v ďalšom kroku.
+</p>
+
+<button
+class="submit"
+type="button"
+onclick="alert('Formulár je pripravený. Odosielanie odpovedí nastavíme v ďalšom kroku. 🤍')">
 
 Odoslať odpoveď
 
@@ -695,7 +836,6 @@ Odoslať odpoveď
 <div class="section-title">
 
 <p>Ak by ste čokoľvek potrebovali</p>
-
 <h2>Kontakt</h2>
 
 </div>
@@ -705,10 +845,40 @@ Odoslať odpoveď
 <h3>Zuzka & Dávid</h3>
 
 <p>
-V prípade otázok nám pokojne napíšte.
+V prípade otázok nám pokojne napíšte alebo zavolajte.
 </p>
 
 <p style="margin-top:25px;">
+
+<strong>Zuzka</strong><br>
+
+<a href="tel:+421917444194">
+0917 444 194
+</a>
+<br>
+
+<a href="mailto:zuzanapadova2@gmail.com">
+zuzanapadova2@gmail.com
+</a>
+
+</p>
+
+<p style="margin-top:20px;">
+
+<strong>Dávid</strong><br>
+
+<a href="tel:+421903239527">
+0903 239 527
+</a>
+<br>
+
+<a href="mailto:dpliska18@gmail.com">
+dpliska18@gmail.com
+</a>
+
+</p>
+
+<p style="margin-top:30px;">
 28. 08. 2027
 </p>
 
@@ -716,6 +886,7 @@ V prípade otázok nám pokojne napíšte.
 
 </section>
 
+<!-- FOOTER -->
 
 <footer>
 
@@ -729,7 +900,6 @@ Až do konca dní 🤍
 
 </footer>
 
-
 <script>
 
 /* ODPOČÍTAVANIE */
@@ -737,42 +907,110 @@ Až do konca dní 🤍
 const weddingDate =
 new Date("August 28, 2027 14:00:00").getTime();
 
+
 function updateCountdown() {
 
-const now = new Date().getTime();
+    const now = new Date().getTime();
 
-const distance = weddingDate - now;
+    const distance = weddingDate - now;
 
-if (distance < 0) {
-document.getElementById("days").innerText = "0";
-document.getElementById("hours").innerText = "0";
-document.getElementById("minutes").innerText = "0";
-document.getElementById("seconds").innerText = "0";
-return;
+
+    if (distance < 0) {
+
+        document.getElementById("days").innerText = "0";
+        document.getElementById("hours").innerText = "0";
+        document.getElementById("minutes").innerText = "0";
+        document.getElementById("seconds").innerText = "0";
+
+        return;
+    }
+
+
+    const days =
+        Math.floor(distance / (1000 * 60 * 60 * 24));
+
+    const hours =
+        Math.floor((distance / (1000 * 60 * 60)) % 24);
+
+    const minutes =
+        Math.floor((distance / (1000 * 60)) % 60);
+
+    const seconds =
+        Math.floor((distance / 1000) % 60);
+
+
+    document.getElementById("days").innerText = days;
+    document.getElementById("hours").innerText = hours;
+    document.getElementById("minutes").innerText = minutes;
+    document.getElementById("seconds").innerText = seconds;
+
 }
 
-const days =
-Math.floor(distance / (1000 * 60 * 60 * 24));
-
-const hours =
-Math.floor((distance / (1000 * 60 * 60)) % 24);
-
-const minutes =
-Math.floor((distance / (1000 * 60)) % 60);
-
-const seconds =
-Math.floor((distance / 1000) % 60);
-
-document.getElementById("days").innerText = days;
-document.getElementById("hours").innerText = hours;
-document.getElementById("minutes").innerText = minutes;
-document.getElementById("seconds").innerText = seconds;
-
-}
 
 updateCountdown();
 
-setInterval(updateCountdown,1000);
+setInterval(updateCountdown, 1000);
+
+
+/* ZOBRAZENIE UBYTOVANIA */
+
+const ucast =
+document.getElementById("ucast");
+
+const ubytovanie =
+document.getElementById("ubytovanie");
+
+
+function updateUbytovanie() {
+
+    if (ucast.value === "ano") {
+
+        ubytovanie.style.display = "block";
+
+    } else {
+
+        ubytovanie.style.display = "none";
+
+    }
+
+}
+
+
+ucast.addEventListener("change", updateUbytovanie);
+
+updateUbytovanie();
+
+
+/* DETAILY UBYTOVANIA */
+
+const ubytovanieZaujem =
+document.getElementById("ubytovanie-zaujem");
+
+const ubytovanieDetaily =
+document.getElementById("ubytovanie-detaily");
+
+
+function updateUbytovanieDetaily() {
+
+    if (ubytovanieZaujem.value === "ano") {
+
+        ubytovanieDetaily.style.display = "block";
+
+    } else {
+
+        ubytovanieDetaily.style.display = "none";
+
+    }
+
+}
+
+
+ubytovanieZaujem.addEventListener(
+    "change",
+    updateUbytovanieDetaily
+);
+
+updateUbytovanieDetaily();
 
 </script>
 
