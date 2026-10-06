@@ -326,6 +326,10 @@ textarea {
     display: none;
 }
 
+#ubytovanie-detaily {
+    display: none;
+}
+
 .important-note {
     font-size: 13px;
     text-align: center;
@@ -424,7 +428,12 @@ footer {
 <nav>
 <div class="nav-inner">
 
-<a href="#domov">Domov</a> <a href="#kedy">Kedy a kde</a> <a href="#program">Program</a> <a href="#dary">Dary</a> <a href="#rsvp">Účasť</a> <a href="#kontakt">Kontakt</a>
+<a href="#domov">Domov</a>
+<a href="#kedy">Kedy a kde</a>
+<a href="#program">Program</a>
+<a href="#dary">Dary</a>
+<a href="#rsvp">Účasť</a>
+<a href="#kontakt">Kontakt</a>
 
 </div>
 </nav>
@@ -509,7 +518,8 @@ Sobrance
 class="map-button"
 href="https://www.google.com/maps/search/?api=1&query=Kostol+sv.+Vavrinca+Sobrance"
 target="_blank">
-Otvoriť mapu </a>
+Otvoriť mapu
+</a>
 
 </div>
 
@@ -528,7 +538,8 @@ Zemplínska šírava
 class="map-button"
 href="https://www.google.com/maps/search/?api=1&query=Hotel+Chemes+Zemplínska+šírava"
 target="_blank">
-Otvoriť mapu </a>
+Otvoriť mapu
+</a>
 
 </div>
 
@@ -652,9 +663,9 @@ pripravili sme pre vás niekoľko tipov na darčeky.
 <div class="rsvp-box">
 
 <form
-    id="rsvpForm"
-    action="https://formspree.io/f/xqpeeerl"
-    method="POST"
+id="rsvpForm"
+action="https://formspree.io/f/xqpeeerl"
+method="POST"
 >
 
 <div class="form-group">
@@ -664,11 +675,11 @@ Meno a priezvisko
 </label>
 
 <input
-    type="text"
-    id="meno"
-    name="Meno a priezvisko"
-    placeholder="Vaše meno a priezvisko"
-    required
+type="text"
+id="meno"
+name="Meno a priezvisko"
+placeholder="Vaše meno a priezvisko"
+required
 >
 
 </div>
@@ -681,16 +692,16 @@ Prídete na našu svadbu?
 </label>
 
 <select
-    id="ucast"
-    name="Účasť"
-    required
+id="ucast"
+name="Účasť"
+required
 >
 
-<option value="Áno, veľmi radi prídeme">
+<option value="ano">
 Áno, veľmi radi prídeme 🤍
 </option>
 
-<option value="Žiaľ, nemôžeme prísť">
+<option value="nie">
 Žiaľ, nemôžeme prísť
 </option>
 
@@ -706,8 +717,9 @@ Počet hostí
 </label>
 
 <select
-    id="hostia"
-    name="Počet hostí"
+id="hostia"
+name="Počet hostí"
+required
 >
 
 <option value="1">1</option>
@@ -725,11 +737,7 @@ Počet hostí
 <!-- UBYTOVANIE -->
 
 <div id="ubytovanie">
-<style>
-#ubytovanie {
-    display: block !important;
-}
-</style>
+
 <div class="form-group">
 
 <label for="ubytovanie-zaujem">
@@ -737,15 +745,15 @@ Máte záujem o ubytovanie?
 </label>
 
 <select
-    id="ubytovanie-zaujem"
-    name="Ubytovanie"
+id="ubytovanie-zaujem"
+name="Ubytovanie"
 >
 
-<option value="Nie, ubytovanie nepotrebujeme">
+<option value="nie">
 Nie, ubytovanie nepotrebujeme
 </option>
 
-<option value="Áno, máme záujem o ubytovanie">
+<option value="ano">
 Áno, máme záujem o ubytovanie
 </option>
 
@@ -763,8 +771,8 @@ Počet osôb na ubytovanie
 </label>
 
 <select
-    id="pocet-osob"
-    name="Počet osôb na ubytovanie"
+id="pocet-osob"
+name="Počet osôb na ubytovanie"
 >
 
 <option value="1">1</option>
@@ -786,8 +794,8 @@ Počet izieb
 </label>
 
 <select
-    id="pocet-izieb"
-    name="Počet izieb"
+id="pocet-izieb"
+name="Počet izieb"
 >
 
 <option value="1">1</option>
@@ -811,9 +819,9 @@ Stravovacie obmedzenia
 </label>
 
 <textarea
-    id="strava"
-    name="Stravovacie obmedzenia"
-    placeholder="Alergie, intolerancie alebo špeciálna strava..."
+id="strava"
+name="Stravovacie obmedzenia"
+placeholder="Alergie, intolerancie alebo špeciálna strava..."
 ></textarea>
 
 </div>
@@ -826,17 +834,17 @@ Odkaz pre nás ❤️
 </label>
 
 <textarea
-    id="odkaz"
-    name="Odkaz pre novomanželov"
-    placeholder="Napíšte nám pár slov..."
+id="odkaz"
+name="Odkaz pre novomanželov"
+placeholder="Napíšte nám pár slov..."
 ></textarea>
 
 </div>
 
 
 <button
-    class="submit"
-    type="submit"
+class="submit"
+type="submit"
 >
 
 Odoslať odpoveď
@@ -920,6 +928,7 @@ Až do konca dní 🤍
 
 </footer>
 
+
 <script>
 
 /* ODPOČÍTAVANIE */
@@ -980,6 +989,14 @@ document.getElementById("ucast");
 const ubytovanie =
 document.getElementById("ubytovanie");
 
+const ubytovanieZaujem =
+document.getElementById("ubytovanie-zaujem");
+
+const ubytovanieDetaily =
+document.getElementById("ubytovanie-detaily");
+
+
+/* Zobrazenie časti o ubytovaní podľa účasti */
 
 function updateUbytovanie() {
 
@@ -996,19 +1013,7 @@ function updateUbytovanie() {
 }
 
 
-ucast.addEventListener("change", updateUbytovanie);
-
-updateUbytovanie();
-
-
-/* DETAILY UBYTOVANIA */
-
-const ubytovanieZaujem =
-document.getElementById("ubytovanie-zaujem");
-
-const ubytovanieDetaily =
-document.getElementById("ubytovanie-detaily");
-
+/* Zobrazenie počtu osôb a izieb */
 
 function updateUbytovanieDetaily() {
 
@@ -1025,10 +1030,21 @@ function updateUbytovanieDetaily() {
 }
 
 
+ucast.addEventListener(
+    "change",
+    updateUbytovanie
+);
+
+
 ubytovanieZaujem.addEventListener(
     "change",
     updateUbytovanieDetaily
 );
+
+
+/* Spustenie pri načítaní stránky */
+
+updateUbytovanie();
 
 updateUbytovanieDetaily();
 
